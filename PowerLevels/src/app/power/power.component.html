@@ -1,0 +1,17 @@
+<header>
+  <section class="left">
+    <span class="title">Adjust Incoming Power Level: </span>
+    <input type="number" 
+           max="100" 
+           min="0" 
+           [(ngModel)]="power">
+  </section>
+</header>
+<section class="body">
+  <app-human [humanPower]="power" class='card'></app-human>
+  <app-saiyan [saiyanPower]="power" class='card'></app-saiyan>
+  <app-super-saiyan [superSaiyanPower]="power" class='card'></app-super-saiyan>
+  <app-super-saiyan-two [superSaiyanPower2]="power" class='card'></app-super-saiyan-two>
+  <app-super-saiyan-three [superSaiyanPower3]="power" class='card'></app-super-saiyan-three>
+  <app-super-saiyan-four [superSaiyanPower4]="power" class='card'></app-super-saiyan-four> 
+</section>

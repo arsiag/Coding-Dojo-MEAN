@@ -1,0 +1,77 @@
+.header{
+    width: 800px;
+    height: 40px;
+    text-decoration: underline;
+    margin: 0px auto;
+}
+.errors{
+    width: 500px;
+    height: 40px;
+    margin: 0px auto;
+    padding: 20px;
+    color: red;
+    overflow-y: auto;
+}
+.msgformarea{
+    width: 500px;
+    height: 140px;
+    padding: 20px;
+}
+.cmntformarea{
+    width: 440px;
+    height: 140px;
+    padding: 20px;
+}
+input, textare{
+    float: right;
+}
+.textarea1{
+    width: 380px;
+    height: 60px;
+    margin: 0px auto;
+    display: block;
+    float: right;
+}
+.textarea2{
+    width: 320px;
+    height: 60px;
+    margin: 0px auto;
+    display: block;
+    float: right;
+}
+.displayarea{
+    width: 800px;
+    height: 500px;
+    margin: 0px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-y: auto;
+}
+.title{
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+.messagearea{
+    width: 700px;
+    margin-left: 20px;
+}
+.commentarea{
+    width: 660px;
+    margin-left: 40px;
+}
+.createmessage{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(97, 228, 97);
+    margin-top: 50px;
+    position: relative;
+    left: 380px;
+}
+.createcomment{
+    width: 100px;
+    height: 30px;
+    background-color: lightblue;
+    margin-top: 50px;
+    position: relative;
+    left: 320px;
+}

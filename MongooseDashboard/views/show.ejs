@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Show</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    </head>
+    <body>
+        <div class="header">
+            <a href="/"><button class="homebutton">Go Home</button></a>
+        </div>
+        <div class="displayarea">
+            <h1>Showing <%= dog.name %></h1>
+            <div class="displayleft">
+                <h2>Name: </h2>
+                <h2>Weight: </h2>
+                <h2>Color: </h2>
+            </div>
+            <div class="displayright">
+                <h2><%= dog.name %></h2>
+                <h2><%= dog.weight %></h2>
+                <h2><%= dog.color %></h2>
+            </div>
+            <a href="/dogs/<%= dog._id %>/edit"><button class="editButton">Edit</button></a>
+            <form class="inlineform" action="/dogs/destroy/<%= dog._id %>" method='post'>
+                <input class="deletebutton" type="submit" value="Delete">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>Switchboard</h1>
+  <div class="board"
+    *ngFor="let switch of switches, let idx = index">
+    <button (click)="toggle(idx)" 
+            [ngClass]="{'green': switch === 'green', 'red': switch === 'red'}"
+            *ngIf="switch === 'green'"
+    >ON</button>
+    <button (click)="toggle(idx)" 
+            [ngClass]="{'green': switch === 'green', 'red': switch === 'red'}"
+            *ngIf="switch === 'red'"
+    >OFF</button>
+  </div> 
+  <!-- <div class="board" 
+    *ngFor="let switch of switches, let idx = index">
+    <button (click)="flipSwitch(idx)"
+            [ngClass]="{'green': switch}"
+            *ngIf="switch"
+    >ON</button>
+    <button (click)="flipSwitch(idx)"
+            [ngClass]="{'red': !switch}"
+            *ngIf="!switch"
+    >OFF</button>
+  </div> -->
+  
+</div>
+
+

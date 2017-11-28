@@ -1,0 +1,39 @@
+<div class="header">
+  <h1>Hi {{ name }}!</h1>
+  <a class="link" [routerLink]="['/new_question']">Add a Question</a>
+  <a class="home" [routerLink]="['/']">Logout</a>
+</div>
+<div class="searchformarea">
+  <form (submit)="Search()" #formData="ngForm">
+    <h2>Search: 
+      <input type="text" 
+      name="search" 
+      required 
+      minlength="1"
+      [(ngModel)]="search"
+      #searchword="ngModel">
+      <button class="searchbutton" type="submit" [disabled]="searchword.invalid">Search</button>
+    </h2>
+  </form>
+</div>
+<div class="displayarea">
+  <table>
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Answers</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let question of questions">
+        <td>{{ question.question }}</td>
+        <td>{{ question._answers.length }}</td>
+        <td>
+          <a class="actionlink" [routerLink]="['/question',question._id]">Show</a>
+          <a class="actionlink" [routerLink]="['/question',question._id,'new_answer']">Answer</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

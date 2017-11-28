@@ -1,0 +1,40 @@
+<div class="header">
+  <a class="link" [routerLink]="['/create']">Create new poll</a>
+  <a class="home" [routerLink]="['/']">Logout</a>
+</div>
+<h1>Current polls: </h1>
+<div class="searchformarea">
+  <form (submit)="Search()" #formData="ngForm">
+    <h2>Search: 
+      <input type="text" 
+      name="search" 
+      [(ngModel)]="search">
+      <button class="searchbutton" type="submit">Search</button>
+    </h2>
+  </form>
+</div>
+<div class="displayarea">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Survey Question</th>
+        <th>Date Posted</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let poll of polls">
+        <td>{{ poll.author }}</td>
+        <td>
+          <a class="link" [routerLink]="['/poll', poll._id]">{{ poll.question }}</a>
+        </td>
+        <td>{{ poll.createdAt | date:'longDate'}}</td>
+        <td>
+          <button class="deletebutton" 
+          *ngIf="poll.author == name " (click)="Delete(poll._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

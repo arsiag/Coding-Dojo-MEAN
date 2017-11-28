@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Index</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    </head>
+    <body>
+        <div class="header">
+            <a href="/dogs/new"><button class="newbutton">Create New Dog</button></a>
+        </div>
+        <div class="errors">
+            <% if(typeof(errors) != 'undefined' ) { %>
+                <!-- <h3><%= errors %></h3> -->
+                <% for (var x in errors) { %>
+                    <p><%= errors[x].message %></p>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="displayarea">
+            <h2 class="title">Here are some cool dogs:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Weight</th>
+                        <th>Color</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <% for (const dog of dogs) { %>
+                    <tr>
+                        <td><h3><a href="/dogs/<%= dog._id %>"><%= dog.name%></a></h3></td>
+                        <td><h3><%= dog.weight %></h3></td>
+                        <td><h3><%= dog.color %></h3></td>
+                        <td><h3>
+                            <a href="/dogs/<%= dog._id %>/edit"><button class="editButton">Edit</button></a>
+                            <form class="inlineform" action="/dogs/destroy/<%= dog._id %>" method='post'>
+                                <input class="deletebutton" type="submit" value="Delete">
+                            </form>
+                        </h3></td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </body>
+</html>
+    

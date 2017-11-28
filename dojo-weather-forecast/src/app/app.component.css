@@ -1,0 +1,11 @@
+div.container {
+    width: 970px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+}

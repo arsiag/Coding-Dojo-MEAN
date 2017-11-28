@@ -1,0 +1,52 @@
+.header{
+    width: 80%;
+    height: 100px;
+    /* border: 2px dotted black; */
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.home{
+    float: right;
+    font-size: 150%;
+}
+.link{
+    font-size: 150%;
+}
+.actionlink{
+    margin-left: 20px;
+}
+table{
+    width: 80%;
+    margin: 0px auto;
+	text-align: center;
+	border: 1px solid black;
+}
+th,td{
+	padding: 5px;
+}
+tr:nth-child(even){
+	background-color: rgb(199, 195, 195);
+}
+th {
+    background-color: rgb(54, 63, 54);
+    color: white;
+}
+p{
+    display: block;
+    padding: 2px;
+    font-size: 120%;
+}
+input{
+    width: 200px;
+    display: inline-block;
+    margin-left: 20px;
+}
+.votebutton{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(70, 157, 238);
+    display: inline-block;
+    margin-left: 20px;
+    color: white;
+}

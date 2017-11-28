@@ -1,0 +1,82 @@
+.header{
+    text-decoration: underline;
+    font-size: 150%;
+}
+.errors{
+    width: 500px;
+    height: 100px;
+    /* border: 3px solid black; */
+    margin: 0px auto;
+    padding: 20px;
+    color: red;
+}
+.formarea{
+    width: 500px;
+    height: 360px;
+    border: 3px solid black;
+    margin: 0px auto;
+    padding: 20px;
+}
+.displayarea{
+    width: 500px;
+    height: 500px;
+    border: 3px solid black;
+    margin: 0px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-y: auto;
+}
+.displayleft{
+    width: 198px;
+    height: 240px;
+    display: inline-block;
+    vertical-align: top;
+}
+.displayright{
+    width: 198px;
+    height: 240px;
+    display: inline-block;
+    vertical-align: top;
+}
+.footer{
+    width: 500px;
+    height: 50px;
+    margin: 0px auto;
+}
+p{
+    display: block;
+    padding: 2px;
+    font-size: 120%;
+}
+input{
+    float: right;
+}
+select{
+    float: right;
+    width: 173px;
+    height: 20px;
+}
+textarea{
+    width: 388px;
+    height: 100px;
+    margin: 0px auto;
+    display: block;
+    float: right;
+}
+.button1{
+    width: 100px;
+    height: 30px;
+    background-color: lightblue;
+    display: block;
+    float: left;
+    margin-top: 10px;
+    margin-top: 70px;
+}
+.button2{
+    width: 150px;
+    height: 30px;
+    background-color: lightblue;
+    display: block;
+    float: right;
+    margin-top: 10px;
+}

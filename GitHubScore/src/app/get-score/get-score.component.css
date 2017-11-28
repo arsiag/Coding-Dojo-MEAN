@@ -1,0 +1,36 @@
+.main{
+    width: 1026px;
+    height: 200px;
+    margin: 0px auto;
+    border: 3px solid black;
+}
+.formarea{
+    width: 500px;
+    height: inherit;
+    vertical-align: top;
+    display: inline-block;
+    padding-left: 20px;
+}
+.displayarea{
+    width: 500px;
+    height: inherit;
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+}
+.field{
+    margin-left: 20px;
+}
+.error{
+    color: red;
+    margin-left: 20px;
+    font-weight: bold;
+}
+.button{
+    width: 300px;
+    background-color: lightblue;
+}
+.red { color: red }
+.orange { color: orange }
+.green { color: green }
+.blue { color: blue }

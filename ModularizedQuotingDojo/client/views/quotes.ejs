@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Users</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    </head>
+    <body>
+        <div class="displayarea">
+            <div class="header">
+                <h2>Here are the awesome quotes:</h2>
+                <hr>
+            </div>
+            <% for (var x in quotes) { %>
+                <h3>" <%= quotes[x].quote %> "</h3>
+                <h4>- <%= quotes[x].name %> 
+                    at <%= quotes[x].createdAt.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }) %>
+                      <%= quotes[x].createdAt.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) %>
+                </h4>
+                <hr>
+            <% } %>   
+        </div>
+        <div class="footer">
+            <form action='/'>
+                <input class="button2" type='submit' value='Go Back'>
+            </form>
+        </div>
+    </body>
+</html>
+    

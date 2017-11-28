@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Edit</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../../style.css">
+    </head>
+    <body>
+        <div class="header">
+            <a href="/"><button class="homebutton">Go Home</button></a>
+        </div>
+        <div class="errors">
+            <% if(typeof(errors) != 'undefined' ) { %>
+                <!-- <h3><%= errors %></h3> -->
+                <% for (var x in errors) { %>
+                    <p><%= errors[x].message %></p>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="formarea">
+            <form action="/dogs/<%= dog.id %>" method='post'>
+                <p>Name: <input type="text" name="name" value="<%= dog.name %>"></p>
+                <p>Weight: <input type="text" name="weight" value="<%= dog.weight %>"></p>
+                <p>Color: <input type="text" name="color" value="<%= dog.color %>"></p>
+                <p><input class="updatebutton" type='submit' value='Update'></p>
+            </form>
+        </div>
+    </body>
+</html>

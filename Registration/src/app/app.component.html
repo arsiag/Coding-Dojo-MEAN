@@ -1,0 +1,139 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="wrapper">
+  <h1>Registration</h1>
+  <div class="header"
+    *ngIf = "register">
+    <p class="success">Thank you for registering with us {{user.firstName}}.</p>
+    <p class="success">We just sent you a confirmation email at {{user.email}}, </p>
+    <p class="success">and we will send all mails to {{user.street}}, {{ user.city}}, {{ user.state}}. </p>
+  </div>
+  <form (submit) = "onSubmit()" name="myForm" #myForm = "ngForm">
+    <section class="row">
+      <p class="label">*First name: </p>
+      <input class="normalInput"
+      type="text" 
+      name="firstName" 
+      required
+      [(ngModel)]="user.firstName" 
+      #firstName = "ngModel">
+      <!-- <span *ngIf="firstName.errors" >{{firstName.errors | json}}</span> -->
+      <span *ngIf="firstName.errors" >First name is required</span>
+    </section>
+    <section class="row">
+      <p class="label">*Last name: </p>
+      <input class="normalInput"
+      type="text" 
+      name="lastName" 
+      required  
+      [(ngModel)]="user.lastName" 
+      #lastName = "ngModel" >
+      <!-- <span *ngIf="lastName.errors" >{{lastName.errors | json}}</span> -->
+      <span *ngIf="lastName.errors" >Last name is required</span>
+    </section>
+    <section class="row">
+      <p class="label">*Email: </p>
+      <input class="normalInput"
+      type="text" 
+      name="email" 
+      required 
+      minlength="4" 
+      maxlength="24" 
+      pattern="^([a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5})$"
+      [(ngModel)]="user.email" 
+      #email = "ngModel" >
+      <!-- <span *ngIf="email.errors" >{{email.errors | json}}</span> -->
+      <span *ngIf="email.errors" >Email must be valid</span>
+    </section>
+    <section class="row">
+      <p class="label">*Password: </p>
+      <input class="normalInput"
+      type="text" 
+      name="password" 
+      required 
+      minlength="16" 
+      maxlength="32" 
+      [(ngModel)]="user.password" 
+      #password = "ngModel" >
+      <!-- <span *ngIf="password.errors" >{{password.errors | json}}</span> -->
+      <span *ngIf="password.errors" >Password must be at least 16 characters long</span>
+    </section>
+    <section class="row">
+      <p class="label">*Password Confirmation: </p>
+      <input class="normalInput"
+      type="text" 
+      name="password_confirmation" 
+      required 
+      minlength="16" 
+      maxlength="32" 
+      [(ngModel)]="user.confirm" 
+      #password_confirmation = "ngModel" >
+      <!-- <span *ngIf="password_confirmation.errors" >{{password_confirmation.errors | json}}</span> -->
+      <!-- <span *ngIf="password_confirmation.errors" >Password confirmation must match password</span> -->
+      <span *ngIf="user.confirm !== user.password" >Password confirmation must match password</span>
+    </section>
+    <section class="row">
+      <p class="label">*Street Address: </p>
+      <input class="normalInput"
+      type="text" 
+      name="street" 
+      required 
+      [(ngModel)]="user.street" 
+      #street = "ngModel" >
+      <!-- <span *ngIf="street.errors" >{{street.errors | json}}</span> -->
+      <span *ngIf="street.errors" >Address is required</span>
+    </section>
+    <section class="row">
+      <p class="label">*Unit/Apt #: </p>
+      <input class="aptInput"
+      type="text" 
+      name="apt" 
+      [(ngModel)]="user.apt" 
+      #apt = "ngModel" >
+      <span *ngIf="apt.errors" >{{apt.errors | json}}</span>
+    </section>
+    <section class="row">
+      <p class="label">*City: </p>
+      <input class="normalInput"
+      type="text" 
+      name="city" 
+      required 
+      [(ngModel)]="user.city" 
+      #city = "ngModel" > 
+      <!-- <span *ngIf="city.errors" >{{city.errors | json}}</span> -->
+      <span *ngIf="city.errors" >City is required</span>
+    </section>
+    <section class="row">
+      <p class="label">*State: </p>
+      <select class="stateInput"
+      name="state" 
+      [(ngModel)]="user.state" 
+      #state = "ngModel">
+        <option>CA</option>
+        <option>WA</option>
+        <option>NJ</option>
+        <option>AZ</option>
+      </select>
+    </section>
+    <section class="row">
+      <p class="label">*I am feeling lucky: </p>
+      <input 
+      type="radio" 
+      name="Yes" 
+      value="Yes"
+      required
+      [(ngModel)]="user.feel" 
+      #feel_lucky = "ngModel" >Yes 
+      <input 
+      type="radio" 
+      name="No" 
+      value="No"
+      required
+      [(ngModel)]="user.feel" 
+      #feel_unlucky = "ngModel" >No 
+      <!-- <span *ngIf="feel_lucky.errors || feel_unlucky.errors" >{{feel_lucky.errors | json}}</span> -->
+      <span *ngIf="feel_lucky.errors || feel_unlucky.errors">Choosing how you feel is required</span>
+    </section>
+    <input class="button" type="submit" ng-disabled="false" *ngIf = "myForm.valid" value = "submit">
+  </form>
+</div>
+

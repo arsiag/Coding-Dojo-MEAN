@@ -1,0 +1,27 @@
+<div class="header">
+  <h1>Anonymous Notes</h1>
+</div>
+<div class="formarea">
+  <form (submit)="OnSubmit()" #formData="ngForm">
+    <h2>Note: 
+      <input type="text" 
+      name="note" 
+      required 
+      minlength="3" 
+      [(ngModel)]="note" 
+      #mynote="ngModel">
+      <button class="button "type="submit">Add Note</button>
+    </h2>
+  </form>
+  <span class="errors" *ngIf="mynote.errors" >Note is required and must be at least 3 characters long!</span>
+</div>
+<div class="displayarea">
+    <ul>
+        <li *ngFor="let note of notes">
+          <p> - Note: {{ note.note }}</p>
+          <p> - Noted on: {{note.createdAt | date:'longDate'}}, {{note.createdAt | date:'mediumTime'}}</p>
+          <hr>
+        </li>
+    </ul>
+</div>
+

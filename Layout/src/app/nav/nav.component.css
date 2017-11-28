@@ -1,0 +1,23 @@
+.nav{
+    border: 2px solid black;
+    background-color: rgb(119, 197, 221); 
+    width: 200px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 30px;
+}
+p{
+    margin-left: 5px;
+}
+button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 130px;
+    height: 30px;
+    background-color: rgb(223, 235, 232);
+    -moz-box-shadow:    3px 3px 3px 3px black;
+    -webkit-box-shadow: 3px 3px 3px 3px black;
+    box-shadow:         3px 3px 3px 3px black;
+}

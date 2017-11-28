@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Results</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    </head>
+    <body>        
+        <div class="displayarea">
+            <h2 class="header">Submitted Information</h2>
+            <div class="displayleft">
+                <h3>Name: </h3>
+                <h3>Dojo Location: </h3>
+                <h3>Favorite Language: </h3>
+                <h3>Comment: </h3>
+            </div>
+            <div class="displayright">
+                <h3><%= user.name %></h3>
+                <h3><%= user.location %></h3>
+                <h3><%= user.lang %></h3>
+                <h3><%= user.comment %></h3> 
+            </div>
+            <form action='/'>
+                <input class="button" type='submit' value='Go Back'>
+            </form>
+        </div>
+    </body>
+</html>

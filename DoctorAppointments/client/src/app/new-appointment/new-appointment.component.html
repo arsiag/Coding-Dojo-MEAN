@@ -1,0 +1,58 @@
+<div class="header">
+  <a class="link" [routerLink]="['/list-appointments']">Home</a>
+  <a class="home" [routerLink]="['/']">Logout</a>
+</div>
+<h1>New Appointment</h1>
+<div class="appointmentformarea">
+  <form (submit)="OnSubmit()" #formData="ngForm">
+    <h2 class="label">Patient's name: 
+        <input type="text" 
+        name="patient" 
+        required 
+        minlength="5" 
+        [(ngModel)]="appointment.patient" 
+        #appName="ngModel">
+    </h2>
+    <h2 class="label">Date:
+        <input type="date" 
+        name="date" 
+        required 
+        min="{{currentDate}}"
+        [(ngModel)]="appointment.date" 
+        #appDate="ngModel">
+    </h2>
+    <h2 class="label">Time: 
+        <select 
+        name="time" 
+        required 
+        [(ngModel)]="appointment.time"
+        #appTime="ngModel">
+          <option value="8:00 AM">8:00 AM</option>
+          <option value="8:00 AM">9:00 AM</option>
+          <option value="8:00 AM">10:00 AM</option>
+          <option value="8:00 AM">11:00 AM</option>
+          <option value="1:00 PM">1:00 PM</option>
+          <option value="1:00 PM">2:00 PM</option>
+          <option value="3:00 PM">3:00 PM</option>
+        </select>
+    </h2>
+    <h2 class="label">Complain:
+      <textarea type="text" 
+        name="complain" 
+        required 
+        minlength="10" 
+        [(ngModel)]="appointment.complain"
+        #appComp="ngModel">
+      </textarea>
+    </h2>
+    <h2>
+        <button class="appointmentbutton" type="submit" [disabled]="formData.invalid">Add new Appointment</button>
+    </h2>
+    <div class="errors">
+        <p *ngIf="appName.errors" >Name is required and must be at least 5 chars long!</p>
+        <p *ngIf="appDate.errors" >Date is required and must be in the future</p>
+        <p *ngIf="appTime.errors" >Time is required!</p>
+        <p *ngIf="appComp.errors" >Complain is required and must be at least 10 characters long!</p>
+    </div>
+  </form>
+</div>

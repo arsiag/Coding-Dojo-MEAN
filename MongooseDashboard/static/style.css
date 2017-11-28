@@ -1,0 +1,119 @@
+.header{
+    width: 800px;
+    height: 60px;
+    text-decoration: underline;
+    margin: 0px auto;
+}
+.errors{
+    width: 500px;
+    height: 60px;
+    margin: 0px auto;
+    padding: 20px;
+    color: red;
+    overflow-y: auto;
+}
+.formarea{
+    width: 500px;
+    height: 260px;
+    border: 3px solid black;
+    margin: 0px auto;
+    padding: 20px;
+}
+.displayarea{
+    width: 800px;
+    height: 500px;
+    margin: 0px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-y: auto;
+}
+.displayleft{
+    width: 198px;
+    height: 160px;
+    display: inline-block;
+    vertical-align: top;
+}
+.displayright{
+    width: 598px;
+    height: 160px;
+    display: inline-block;
+    vertical-align: top;
+}
+.footer{
+    width: 500px;
+    height: 50px;
+    margin: 0px auto;
+}
+table{
+    width: 80%;
+    margin: 0px auto;
+	text-align: center;
+	border: 1px solid black;
+}
+th,td{
+	padding: 5px;
+}
+tr:nth-child(even){
+	background-color: rgb(211, 211, 211);
+}
+
+p{
+    padding: 2px;
+    /* font-size: 120%; */
+}
+input{
+    float: right;
+}
+.title{
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+.inlineform{
+    display: inline-block;
+    vertical-align: top;
+}
+.newbutton{
+    width: 150px;
+    height: 30px;
+    background-color: rgb(231, 214, 125);
+    display: block;
+    float: right;
+    margin-top: 10px;
+}
+.homebutton{
+    width: 100px;
+    height: 30px;
+    background-color: lightblue;
+    display: block;
+    float: right;
+    margin-top: 10px;
+}
+.createbutton{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(97, 228, 97);
+    display: block;
+    float: right;
+    margin-top: 10px;
+}
+.editbutton{
+    width: 80px;
+    height: 20px;
+    background-color: orange;
+    display: inline-block;
+    vertical-align: top;
+}
+.deletebutton{
+    width: 80px;
+    height: 20px;
+    background-color: rgb(124, 31, 31);
+    color: white;
+}
+.updatebutton{
+    width: 150px;
+    height: 30px;
+    background-color: rgb(231, 214, 125);
+    display: block;
+    float: right;
+    margin-top: 10px;
+}

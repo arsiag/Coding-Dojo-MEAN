@@ -1,0 +1,59 @@
+<div class="header">
+  <a class="link" [routerLink]="['/dashboard']">Cancel</a>
+  <a class="home" [routerLink]="['/']">Logout</a>
+</div>
+<h1>Put the question and options here:</h1>
+<div class="pollformarea">
+  <form (submit)="OnSubmit()" #formData="ngForm">
+    <h2 class="label">Question: 
+        <input type="text" 
+        name="question" 
+        required 
+        minlength="8" 
+        [(ngModel)]="poll.question" 
+        #pollquestion="ngModel">
+    </h2>
+    <h2 class="label">option 1:
+        <input type="text" 
+        name="option1" 
+        required 
+        minlength="3" 
+        [(ngModel)]="poll.options[0]" 
+        #polloption1="ngModel">
+    </h2>
+    <h2 class="label">option 2:
+        <input type="text" 
+        name="option2" 
+        required 
+        minlength="3" 
+        [(ngModel)]="poll.options[1]" 
+        #polloption2="ngModel">
+    </h2>
+    <h2 class="label">option 3:
+        <input type="text" 
+        name="option3" 
+        required 
+        minlength="3" 
+        [(ngModel)]="poll.options[2]" 
+        #polloption3="ngModel">
+    </h2>
+    <h2 class="label">option 4:
+        <input type="text" 
+        name="option4" 
+        required 
+        minlength="3" 
+        [(ngModel)]="poll.options[3]" 
+        #polloption4="ngModel">
+    </h2>
+    <h2>
+        <button class="pollbutton" type="submit" [disabled]="formData.invalid">Create Poll</button>
+    </h2>
+    <div class="errors">
+        <p *ngIf="pollquestion.errors" >Question is required and must be at least 8 chars long!</p>
+        <p *ngIf="polloption1.errors" >Option 1 is required and must be at least 3 chars long!</p>
+        <p *ngIf="polloption2.errors" >Option 2 is required and must be at least 3 chars long!</p>
+        <p *ngIf="polloption3.errors" >Option 3 is required and must be at least 3 chars long!</p>
+        <p *ngIf="polloption4.errors" >Option 4 is required and must be at least 3 chars long!</p>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+<div class="header">
+  <a class="link" [routerLink]="['/home']">Home</a> | 
+  <a class="link" [routerLink]="['/question', question._id , 'new_answer']">Answer this Question</a>
+  <a class="home" [routerLink]="['/']">Logout</a>
+</div>
+
+<div class="questiondisplayarea">
+  <h1>{{question.question}}</h1>
+  <h3>{{question.description}}</h3>
+</div>
+<div class="answerdisplayarea">
+  <div *ngFor="let answer of question._answers">
+    <div class="leftanswerdisplayarea">
+      <p>{{answer.username}}: </p>
+      <p>{{answer.answer}}</p>
+      <p>{{answer.details}}</p>
+    </div>
+    <div class="rightanswerdisplayarea">
+      <p class="like" >{{answer.likes}} Likes</p>
+      <button class="likebutton" (click)="Like(answer._id)">Like!</button>
+    </div>
+    <hr>
+  </div>
+</div>

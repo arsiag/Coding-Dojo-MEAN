@@ -1,0 +1,19 @@
+
+table{
+    width: 1000px;
+    margin: 0px auto;
+    text-align: left;
+    border: 1px solid black;
+}
+
+th,td{
+	padding: 5px;
+}
+tr:nth-child(even){
+	background-color: rgb(211, 211, 211);
+}
+
+h1{
+    margin-left: 170px;
+    margin-bottom: 40px;
+}

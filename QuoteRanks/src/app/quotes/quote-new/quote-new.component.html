@@ -1,0 +1,23 @@
+<h1>Add a Quote</h1>
+<form (submit)="onSubmit()" #formData="ngForm">
+  <textarea 
+    id="quote" 
+    name="content" 
+    required 
+    minlength="10"
+    [(ngModel)]="quote.content"
+    #content = "ngModel"> 
+  </textarea>
+  <span class="error" *ngIf="content.errors" >Quote is required</span>
+	<p>Author: 
+    <input 
+      type="text" 
+      name="author" 
+      required 
+      minlength="5"
+      [(ngModel)]="quote.author"
+      #author = "ngModel">
+      <span class="error" *ngIf="author.errors" >Author is required</span>
+  </p>
+  <input class="button" type="submit" [disabled]="formData.invalid" value = "Add Quote">
+</form>

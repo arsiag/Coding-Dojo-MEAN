@@ -1,0 +1,41 @@
+<div class="header">
+  <a class="link" [routerLink]="['/home']">Home</a> | 
+  <a class="link" [routerLink]="['/question', question._id]">Go back to Question</a>
+  <a class="home" [routerLink]="['/']">Logout</a>
+</div>
+
+<div class="questiondisplayarea">
+  <h1>{{question.question}}</h1>
+  <h3>{{question.description}}</h3>
+</div>
+<div class="answerformarea">
+  <form (submit)="OnSubmit()" #formData="ngForm">
+    <h2 class="label">Your Answer: 
+      <textarea type="text" 
+        name="answer" 
+        required 
+        minlength="5" 
+        [(ngModel)]="answer.answer" 
+        #ans="ngModel">
+      </textarea>
+    </h2>
+    <h2 class="label">Supporting details for your answer(optional):
+      <textarea type="text" 
+        name="details" 
+        [(ngModel)]="answer.details">
+      </textarea>
+    </h2>
+    <h2>
+      <button class="cancelbutton" (click)="Cancel()">Cancel</button>
+      <button class="answerbutton" type="submit" [disabled]="ans.invalid">Submit</button>
+    </h2>
+    <!-- <span class="errors" *ngIf="ans.errors" >Answer is required and must be at least 5 characters long!</span>  -->
+    <span class="errors">
+      <ul *ngIf="ans.invalid && (ans.dirty||ans.touched)">
+        <li *ngIf="ans.errors.required">Answer is empty.</li>
+        <li *ngIf="ans.errors.minlength">Answer is too short.</li>
+      </ul>
+    </span>
+  </form>
+</div>
+

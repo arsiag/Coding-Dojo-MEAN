@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>New</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    </head>
+    <body>
+        <div class="header">
+            <a href="/"><button class="homebutton">Go Home</button></a>
+        </div>
+        <div class="errors">
+            <% if(typeof(errors) != 'undefined' ) { %>
+                <!-- <h3><%= errors %></h3> -->
+                <% for (var x in errors) { %>
+                    <p><%= errors[x].message %></p>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="formarea">
+            <form action='/dogs' method='post'>
+                <p>Name: <input type="text" name="name"></p>
+                <p>Weight: <input type="text" name="weight"></p>
+                <p>Color: <input type="text" name="color"></p>
+                <p><input class="createbutton" type='submit' value='Add new'></p>
+            </form>
+        </div>
+    </body>
+</html>
+        

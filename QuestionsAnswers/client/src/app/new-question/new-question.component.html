@@ -1,0 +1,35 @@
+<div class="header">
+  <a class="link" [routerLink]="['/home']">Home</a>
+  <a class="home" [routerLink]="['/']">Logout</a>
+</div>
+<h1>New Question</h1>
+<div class="questionformarea">
+  <form (submit)="OnSubmit()" #formData="ngForm">
+    <h2 class="label">Question: 
+      <textarea type="text" 
+        name="question" 
+        required 
+        minlength="10" 
+        [(ngModel)]="question.question" 
+        #quest="ngModel">
+      </textarea>
+    </h2>
+    <h2 class="label">Description(optional):
+      <textarea type="text" 
+        name="description" 
+        [(ngModel)]="question.description">
+      </textarea>
+    </h2>
+    <h2>
+      <button class="cancelbutton" (click)="Cancel()">Cancel</button>
+      <button class="questionbutton" type="submit" [disabled]="quest.invalid">Submit</button>
+    </h2>
+    <!-- <span class="errors" *ngIf="quest.errors" >Question is required and must be at least 10 characters long!</span> -->
+    <span class="errors">
+      <ul *ngIf="quest.invalid && (quest.dirty||quest.touched)">
+        <li *ngIf="quest.errors.required">Question is empty.</li>
+        <li *ngIf="quest.errors.minlength">Question is too short.</li>
+      </ul>
+    </span> 
+  </form>
+</div>

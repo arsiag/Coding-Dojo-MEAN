@@ -1,0 +1,16 @@
+<h1>Quotes List: </h1>
+
+<div class="quotebox" *ngFor="let quote of quotes; let idx=index"> <!-- | orderBy: -rating -->
+  <div class="quotetext">
+    <p>" {{ quote.content }} "<br> - {{ quote.author}}</p>
+  </div>
+  <div class="quoterating">
+    <h1 *ngIf='quote.rating >= 0'> +{{ quote.rating }} </h1>
+    <h1 *ngIf='quote.rating < 0'> {{ quote.rating }} </h1>
+  </div>
+  <div class="quoteaction">
+      <button class="voteup" (click)="voteUp(idx)">Vote Up</button>
+      <button class="votedown" (click)="voteDown(idx)">Vote Down</button>
+      <button class="delete" (click)="deleteQuote(idx)">Delete</button>
+  </div>
+</div>

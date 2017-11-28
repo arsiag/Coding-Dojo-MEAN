@@ -1,0 +1,23 @@
+<div class="header">
+  <h1>Q & A</h1>
+</div>
+<div class="loginformarea">
+  <form (submit)="OnSubmit()" #formData="ngForm">
+    <h2>Name: 
+      <input type="text" 
+      name="name" 
+      required 
+      minlength="3" 
+      [(ngModel)]="name" 
+      #username="ngModel">
+      <button class="loginbutton" type="submit" [disabled]="username.invalid">Enter</button>
+    </h2>
+  </form>
+  <span class="errors" *ngIf="username.errors" >Name is required and must be at least 3 characters long!</span>
+  <!-- <span class="errors">
+    <ul *ngIf="username.invalid && (username.dirty||username.touched)">
+      <li *ngIf="username.errors.required">Name is empty.</li>
+      <li *ngIf="username.errors.minlength">Name is too short.</li>
+    </ul>
+  </span>  -->
+</div>

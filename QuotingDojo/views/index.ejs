@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Index</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    </head>
+    <body>
+        <div class="errors">
+            <% if(typeof(errors) != 'undefined' ) { %>
+                <% for (var x in errors) { %>
+                    <h3><%= errors[x].message %></h3>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="formarea">
+            <form action='/quotes' method='post'>
+                <p>Your Name: <input type='text' name='name'></p>
+                <p>Your Quote: <textarea name="quote"></textarea></p>
+                <input class="button1" type='submit' value='Add my quote!'>
+                <a  href="/quotes">
+                    <button class="button2" type="button" href="/quotes">Skip to quotes!</button> 
+                </a>
+            </form>
+
+        </div>
+    </body>
+</html>
+        

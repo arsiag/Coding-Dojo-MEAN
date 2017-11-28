@@ -1,0 +1,42 @@
+.header{
+    width: inherit;
+    height: 60px;
+    /* border: 2px dotted black; */
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.loginformarea{
+    width: inherit;
+    height: 100px;
+    /* border: 3px dotted black; */
+    margin: 0px auto;
+    padding: 20px;
+    margin-top: 20px;
+}
+.errors{
+    width: inherit;
+    height: 40px;
+    /* border: 3px solid black; */
+    display: block;
+    margin: 0px auto;
+    color: red;
+}
+p{
+    display: block;
+    padding: 2px;
+    font-size: 120%;
+}
+input{
+    width: 200px;
+    display: inline-block;
+    margin-left: 20px;
+}
+.loginbutton{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(27, 141, 55);
+    display: inline-block;
+    margin-left: 20px;
+    color: white;
+}

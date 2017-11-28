@@ -1,0 +1,41 @@
+<div class="header">
+  <h1>Doctor's Appointments</h1>
+  <h3>Welcome, {{ name }}!</h3>
+  <a class="link" [routerLink]="['/new-appointment']">Add an Appointment</a>
+  <a class="home" [routerLink]="['/']">Logout</a>
+</div>
+<div class="searchformarea">
+  <form (submit)="Search()" #formData="ngForm">
+    <h2>Search: 
+      <input type="text" 
+      name="search" 
+      [(ngModel)]="search">
+      <button class="searchbutton" type="submit">Search</button>
+    </h2>
+  </form>
+</div>
+<div class="displayarea">
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Patient Name</th>
+        <th>Complain</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of appoinments">
+        <td>{{ appointment.date }}</td>
+        <td>{{ appointment.time }}</td>
+        <td>{{ appointment.patient }}</td>
+        <td>{{ appointment.complain }}</td>
+        <td>
+          <button class="cancelbutton" 
+          *ngIf="appointment.patient == name && appointment.date > currentDate " (click)="Cancel(appointment._id)">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

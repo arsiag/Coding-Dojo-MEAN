@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+    <h1>US Time Zone Display</h1>
+</div>
+<div>
+    <button (click)="logDateTime('PST')" [ngClass]="{flag: buttonSelected === 'PST'}">PST</button>
+    <button (click)="logDateTime('MST')" [ngClass]="{flag: buttonSelected === 'MST'}">MST</button>
+    <button (click)="logDateTime('CST')" [ngClass]="{flag: buttonSelected === 'CST'}">CST</button>
+    <button (click)="logDateTime('EST')" [ngClass]="{flag: buttonSelected === 'EST'}">EST</button>
+    <button (click)="logDateTime('CLR')">Clear</button>
+</div>
+<div *ngIf="buttonSelected !== 'CLR'">
+    <h1>{{time | date:'medium'}}</h1>
+</div>

@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Index</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="errors">
+            <% if(typeof(errors) != 'undefined' ) { %>
+                <!-- <h3><%= errors %></h3> -->
+                <% for (var x in errors) { %>
+                    <p><%= errors[x].message %></p>
+                <% } %>
+            <% } %>
+        </div>
+        
+        <div class="displayarea">
+            <div class="header">
+                <h1 class="title">Dojo Message Board:</h1>
+                <hr>
+            </div>
+            
+            <div class="msgformarea">
+                <form action='/messages' method='post'>
+                    <p>Name: <input type='text' name='name'></p>
+                    <p>Message: <textarea class="textarea1" name="message"></textarea></p>
+                    <p><input class="createmessage" type='submit' value='Post message'></p>
+                </form>
+    
+            </div>
+            <% if(msgs) { %>
+                <div class="messagearea">
+                <% for (const msg of msgs) { %>
+                    <h2>Name: <%= msg.name %></h2>
+                    <h2>Message: <%= msg.message %></h2>
+                    <div class="commentarea">
+                        <% for (const cmnt of msg.comments) { %>
+                            <h3>Name: <%= cmnt.name %></h3>
+                            <h3>Comment: <%= cmnt.comment %></h3>
+                            <br>  
+                        <% } %>
+                        <div class="cmntformarea">
+                            <form action='/messages/<%= msg._id %>' method='post'>
+                                <p>Name: <input type='text' name='name'></p>
+                                <p>Comment: <textarea class="textarea2" name="comment"></textarea></p>
+                                <p><input class="createcomment" type='submit' value='Post comment'></p>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                <% } %>
+                </div>
+            <% } %>
+        </div>
+    </body>
+</html>
+    

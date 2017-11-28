@@ -1,0 +1,61 @@
+.header{
+    width: 80%;
+    height: 60px;
+    /* border: 2px dotted black; */
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.questiondisplayarea{
+    width: inherit;
+    height: 60px;
+    /* border: 3px dotted black; */
+    /* margin: 0px auto; */
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+.answerdisplayarea{
+    width: 90%;
+    height: 500px;
+    margin: 0px auto;
+    overflow-y: auto;
+}
+.leftanswerdisplayarea{
+    width: 60%;
+    height: 90px;
+    display: inline-block;
+    /* border: 1px dotted black; */
+    vertical-align: top;
+}
+.rightanswerdisplayarea{
+    width: 30%;
+    height: 90px;
+    display: inline-block;
+    /* border: 1px dotted black; */
+    vertical-align: top;
+}
+.home{
+    float: right;
+    font-size: 150%;
+}
+.link{
+    font-size: 150%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.like{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 30px;
+}
+.likebutton{
+    width: 60px;
+    height: 20px;
+    background-color: rgb(54, 101, 204);
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    margin-top: 30px;
+    color: white;
+}

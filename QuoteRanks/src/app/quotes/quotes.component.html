@@ -1,0 +1,16 @@
+<app-quote-new 
+  (addQuote)="create($event)">
+</app-quote-new>
+
+<app-quote-list 
+  [quotes]="myquotes"
+  (voteup)="voteUp($event)"  
+  (votedown)="voteDown($event)"
+  (delete)="deleteQuote($event)">
+</app-quote-list>
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+textarea{
+    width: 400px;
+    height: 100px;
+}
+p{ 
+    margin-left: 200px;
+}
+input{
+    width: 150px;
+}
+.button{
+    margin-left: 300px;
+    width: 100px;
+    background-color: rgb(25, 216, 223);
+}
+.error{
+    color: red;
+    font-weight: bold;
+    margin-left: 50px;
+}

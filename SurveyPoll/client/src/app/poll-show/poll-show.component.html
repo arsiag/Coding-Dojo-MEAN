@@ -1,0 +1,27 @@
+<div class="header">
+    <a class="link" [routerLink]="['/dashboard']">Go to Polls</a>
+    <a class="home" [routerLink]="['/']">Logout</a>
+  </div>
+<div class="polldisplayarea">
+    <h1>{{poll.question}}</h1>
+    <h3>Click the vote button to choose one:</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Option</th>
+          <th>Current count of Votes</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let option of poll.options; let idx = index">
+          <td>{{ option.option }}</td>
+          <td>{{ option.vote}}</td>
+          <td>
+            <button class="votebutton" (click)="Vote(poll._id, idx)">Vote</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
